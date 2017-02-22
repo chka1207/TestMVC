@@ -11,10 +11,13 @@ namespace TestMVC.Models
         public int ArbetatPassID { get; set; }
         public Vakt Vakt { get; set; }
         public Krog Krog { get; set; }
+        [Required]
         [DataType(DataType.Date)]
         public DateTime Datum { get; set; }
+        [Required]
         [DataType(DataType.Time)]
         public DateTime Start { get; set; }
+        [Required]
         [DataType(DataType.Time)]
         public DateTime Slut { get; set; }
     }
