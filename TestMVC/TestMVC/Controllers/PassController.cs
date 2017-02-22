@@ -10,109 +10,107 @@ using TestMVC.Models;
 
 namespace TestMVC.Controllers
 {
-    public class ArbetatPassesController : Controller
+    public class PassController : Controller
     {
-        private ArbetatPassContext db = new ArbetatPassContext();
+        private PassContext db = new PassContext();
 
-        // GET: ArbetatPasses
+        // GET: Pass
         public ActionResult Index()
         {
-            return View(db.ArbetatPasses.ToList());
+            return View(db.Passes.ToList());
         }
 
-        // GET: ArbetatPasses/Details/5
+        // GET: Pass/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ArbetatPass arbetatPass = db.ArbetatPasses.Find(id);
-            if (arbetatPass == null)
+            Pass pass = db.Passes.Find(id);
+            if (pass == null)
             {
                 return HttpNotFound();
             }
-            return View(arbetatPass);
-
-
+            return View(pass);
         }
 
-        // GET: ArbetatPasses/Create
+        // GET: Pass/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ArbetatPasses/Create
+        // POST: Pass/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ArbetatPassID,Datum,Start,Slut")] ArbetatPass arbetatPass)
+        public ActionResult Create([Bind(Include = "PassID,Datum,Start,Slut")] Pass pass)
         {
             if (ModelState.IsValid)
             {
-                db.ArbetatPasses.Add(arbetatPass);
+                db.Passes.Add(pass);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(arbetatPass);
+            return View(pass);
         }
 
-        // GET: ArbetatPasses/Edit/5
+        // GET: Pass/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ArbetatPass arbetatPass = db.ArbetatPasses.Find(id);
-            if (arbetatPass == null)
+            Pass pass = db.Passes.Find(id);
+            if (pass == null)
             {
                 return HttpNotFound();
             }
-            return View(arbetatPass);
+            return View(pass);
         }
 
-        // POST: ArbetatPasses/Edit/5
+        // POST: Pass/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ArbetatPassID,Datum,Start,Slut")] ArbetatPass arbetatPass)
+        public ActionResult Edit([Bind(Include = "PassID,Datum,Start,Slut")] Pass pass)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(arbetatPass).State = EntityState.Modified;
+                db.Entry(pass).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(arbetatPass);
+            return View(pass);
         }
 
-        // GET: ArbetatPasses/Delete/5
+        // GET: Pass/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ArbetatPass arbetatPass = db.ArbetatPasses.Find(id);
-            if (arbetatPass == null)
+            Pass pass = db.Passes.Find(id);
+            if (pass == null)
             {
                 return HttpNotFound();
             }
-            return View(arbetatPass);
+            return View(pass);
         }
 
-        // POST: ArbetatPasses/Delete/5
+        // POST: Pass/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ArbetatPass arbetatPass = db.ArbetatPasses.Find(id);
-            db.ArbetatPasses.Remove(arbetatPass);
+            Pass pass = db.Passes.Find(id);
+            db.Passes.Remove(pass);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,4 +1,4 @@
-﻿@model TestMVC.Models.ArbetatPass
+﻿@model TestMVC.Models.Pass
 
 @{
     ViewBag.Title = "Edit";
@@ -12,10 +12,10 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ArbetatPass</h4>
+        <h4>Pass</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ArbetatPassID)
+        @Html.HiddenFor(model => model.PassID)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Datum, htmlAttributes: new { @class = "control-label col-md-2" })

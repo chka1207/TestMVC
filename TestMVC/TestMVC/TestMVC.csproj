@@ -168,20 +168,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ArbetatPassesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PassController.cs" />
     <Compile Include="Controllers\VaktsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\ArbetatPass.cs" />
-    <Compile Include="Models\ArbetatPassContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Krog.cs" />
     <Compile Include="Models\Krögare.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Pass.cs" />
+    <Compile Include="Models\PassContext.cs" />
     <Compile Include="Models\Vakt.cs" />
     <Compile Include="Models\VaktContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -242,16 +242,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\ArbetatPasses\Create.cshtml" />
-    <Content Include="Views\ArbetatPasses\Delete.cshtml" />
-    <Content Include="Views\ArbetatPasses\Details.cshtml" />
-    <Content Include="Views\ArbetatPasses\Edit.cshtml" />
-    <Content Include="Views\ArbetatPasses\Index.cshtml" />
     <Content Include="Views\Vakts\Create.cshtml" />
     <Content Include="Views\Vakts\Delete.cshtml" />
     <Content Include="Views\Vakts\Details.cshtml" />
     <Content Include="Views\Vakts\Edit.cshtml" />
     <Content Include="Views\Vakts\Index.cshtml" />
+    <Content Include="Views\Pass\Create.cshtml" />
+    <Content Include="Views\Pass\Delete.cshtml" />
+    <Content Include="Views\Pass\Details.cshtml" />
+    <Content Include="Views\Pass\Edit.cshtml" />
+    <Content Include="Views\Pass\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

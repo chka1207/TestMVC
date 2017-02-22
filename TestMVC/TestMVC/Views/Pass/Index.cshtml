@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TestMVC.Models.ArbetatPass>
+﻿@model IEnumerable<TestMVC.Models.Pass>
 
 @{
     ViewBag.Title = "Index";
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.Slut)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArbetatPassID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArbetatPassID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArbetatPassID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.PassID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PassID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PassID })
         </td>
     </tr>
 }

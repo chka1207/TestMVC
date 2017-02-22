@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TestMVC.Models
 {
-    public class ArbetatPass
+    public class Pass
     {
-        public int ArbetatPassID { get; set; }
+        public int PassID { get; set; }
         public Vakt Vakt { get; set; }
         public Krog Krog { get; set; }
         [Required]
@@ -17,7 +17,7 @@ namespace TestMVC.Models
         [Required]
         [DataType(DataType.Time)]
         public DateTime Start { get; set; }
-        [Required]
+
         [DataType(DataType.Time)]
         public DateTime Slut { get; set; }
     }
