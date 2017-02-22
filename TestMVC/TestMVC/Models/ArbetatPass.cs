@@ -7,6 +7,7 @@ namespace TestMVC.Models
 {
     public class ArbetatPass
     {
+        public int ArbetatPassID { get; set; }
         public Vakt Vakt { get; set; }
         public Krog Krog { get; set; }
         public DateTime Datum { get; set; }
