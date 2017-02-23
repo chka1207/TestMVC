@@ -169,21 +169,22 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KrogController.cs" />
+    <Compile Include="Controllers\KrögareController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PassController.cs" />
-    <Compile Include="Controllers\VaktsController.cs" />
+    <Compile Include="Controllers\VaktController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DatabasContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Krog.cs" />
     <Compile Include="Models\Krögare.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Pass.cs" />
-    <Compile Include="Models\PassContext.cs" />
     <Compile Include="Models\Vakt.cs" />
-    <Compile Include="Models\VaktContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -242,11 +243,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Vakts\Create.cshtml" />
-    <Content Include="Views\Vakts\Delete.cshtml" />
-    <Content Include="Views\Vakts\Details.cshtml" />
-    <Content Include="Views\Vakts\Edit.cshtml" />
-    <Content Include="Views\Vakts\Index.cshtml" />
+    <Content Include="Views\Vakt\Create.cshtml" />
+    <Content Include="Views\Vakt\Delete.cshtml" />
+    <Content Include="Views\Vakt\Details.cshtml" />
+    <Content Include="Views\Vakt\Edit.cshtml" />
+    <Content Include="Views\Vakt\Index.cshtml" />
+    <Content Include="Views\Krögare\Create.cshtml" />
+    <Content Include="Views\Krögare\Delete.cshtml" />
+    <Content Include="Views\Krögare\Details.cshtml" />
+    <Content Include="Views\Krögare\Edit.cshtml" />
+    <Content Include="Views\Krögare\Index.cshtml" />
+    <Content Include="Views\Krog\Create.cshtml" />
+    <Content Include="Views\Krog\Delete.cshtml" />
+    <Content Include="Views\Krog\Details.cshtml" />
+    <Content Include="Views\Krog\Edit.cshtml" />
+    <Content Include="Views\Krog\Index.cshtml" />
     <Content Include="Views\Pass\Create.cshtml" />
     <Content Include="Views\Pass\Delete.cshtml" />
     <Content Include="Views\Pass\Details.cshtml" />

@@ -10,17 +10,17 @@ using TestMVC.Models;
 
 namespace TestMVC.Controllers
 {
-    public class VaktsController : Controller
+    public class VaktController : Controller
     {
-        private VaktContext db = new VaktContext();
+        private DatabasContext db = new DatabasContext();
 
-        // GET: Vakts
+        // GET: Vakt
         public ActionResult Index()
         {
             return View(db.Vakts.ToList());
         }
 
-        // GET: Vakts/Details/5
+        // GET: Vakt/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace TestMVC.Controllers
             return View(vakt);
         }
 
-        // GET: Vakts/Create
+        // GET: Vakt/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Vakts/Create
+        // POST: Vakt/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace TestMVC.Controllers
             return View(vakt);
         }
 
-        // GET: Vakts/Edit/5
+        // GET: Vakt/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace TestMVC.Controllers
             return View(vakt);
         }
 
-        // POST: Vakts/Edit/5
+        // POST: Vakt/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace TestMVC.Controllers
             return View(vakt);
         }
 
-        // GET: Vakts/Delete/5
+        // GET: Vakt/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace TestMVC.Controllers
             return View(vakt);
         }
 
-        // POST: Vakts/Delete/5
+        // POST: Vakt/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

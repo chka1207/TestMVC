@@ -9,12 +9,16 @@ namespace TestMVC.Models
     public class Pass
     {
         public int PassID { get; set; }
-        public Vakt Vakt { get; set; }
-        public Krog Krog { get; set; }
-        [Required]
+        public int VaktID { get; set; }
+
+        public int KrogID { get; set; }
+        public virtual Krog Krog { get; set; }
+
+        [Required()]
+        [Display(Name ="Datum när passet startar")]
         [DataType(DataType.Date)]
         public DateTime Datum { get; set; }
-        [Required]
+        
         [DataType(DataType.Time)]
         public DateTime Start { get; set; }
 

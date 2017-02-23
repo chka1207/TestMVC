@@ -10,112 +10,107 @@ using TestMVC.Models;
 
 namespace TestMVC.Controllers
 {
-    public class PassController : Controller
+    public class KrogController : Controller
     {
         private DatabasContext db = new DatabasContext();
 
-        // GET: Pass
+        // GET: Krog
         public ActionResult Index()
         {
-            var passes = db.Passes.Include(p => p.Krog);
-            return View(passes.ToList());
+            return View(db.Krogs.ToList());
         }
 
-        // GET: Pass/Details/5
+        // GET: Krog/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pass pass = db.Passes.Find(id);
-            if (pass == null)
+            Krog krog = db.Krogs.Find(id);
+            if (krog == null)
             {
                 return HttpNotFound();
             }
-            return View(pass);
+            return View(krog);
         }
 
-        // GET: Pass/Create
+        // GET: Krog/Create
         public ActionResult Create()
         {
-            ViewBag.KrogID = new SelectList(db.Krogs, "KrogID", "Namn");
             return View();
         }
 
-        // POST: Pass/Create
+        // POST: Krog/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PassID,VaktID,KrogID,Datum,Start,Slut")] Pass pass)
+        public ActionResult Create([Bind(Include = "KrogID,Namn,Adress,Postnummer,Ort")] Krog krog)
         {
             if (ModelState.IsValid)
             {
-                db.Passes.Add(pass);
+                db.Krogs.Add(krog);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.KrogID = new SelectList(db.Krogs, "KrogID", "Namn", pass.KrogID);
-            return View(pass);
+            return View(krog);
         }
 
-        // GET: Pass/Edit/5
+        // GET: Krog/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pass pass = db.Passes.Find(id);
-            if (pass == null)
+            Krog krog = db.Krogs.Find(id);
+            if (krog == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.KrogID = new SelectList(db.Krogs, "KrogID", "Namn", pass.KrogID);
-            return View(pass);
+            return View(krog);
         }
 
-        // POST: Pass/Edit/5
+        // POST: Krog/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PassID,VaktID,KrogID,Datum,Start,Slut")] Pass pass)
+        public ActionResult Edit([Bind(Include = "KrogID,Namn,Adress,Postnummer,Ort")] Krog krog)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(pass).State = EntityState.Modified;
+                db.Entry(krog).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.KrogID = new SelectList(db.Krogs, "KrogID", "Namn", pass.KrogID);
-            return View(pass);
+            return View(krog);
         }
 
-        // GET: Pass/Delete/5
+        // GET: Krog/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pass pass = db.Passes.Find(id);
-            if (pass == null)
+            Krog krog = db.Krogs.Find(id);
+            if (krog == null)
             {
                 return HttpNotFound();
             }
-            return View(pass);
+            return View(krog);
         }
 
-        // POST: Pass/Delete/5
+        // POST: Krog/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Pass pass = db.Passes.Find(id);
-            db.Passes.Remove(pass);
+            Krog krog = db.Krogs.Find(id);
+            db.Krogs.Remove(krog);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

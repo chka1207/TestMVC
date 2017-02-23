@@ -6,7 +6,7 @@ using System.Web;
 
 namespace TestMVC.Models
 {
-    public class VaktContext : DbContext
+    public class DatabasContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -15,10 +15,16 @@ namespace TestMVC.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public VaktContext() : base("name=VaktContext")
+        public DatabasContext() : base("name=DatabasContext")
         {
         }
 
         public System.Data.Entity.DbSet<TestMVC.Models.Vakt> Vakts { get; set; }
+
+        public System.Data.Entity.DbSet<TestMVC.Models.Krögare> Krögare { get; set; }
+
+        public System.Data.Entity.DbSet<TestMVC.Models.Krog> Krogs { get; set; }
+
+        public System.Data.Entity.DbSet<TestMVC.Models.Pass> Passes { get; set; }
     }
 }
