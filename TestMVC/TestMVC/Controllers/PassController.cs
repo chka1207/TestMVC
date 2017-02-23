@@ -14,6 +14,7 @@ namespace TestMVC.Controllers
     {
         private DatabasContext db = new DatabasContext();
 
+
         // GET: Pass
         public ActionResult Index()
         {

@@ -18,6 +18,8 @@ namespace TestMVC.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        //public int NumberOfKrogar { get; set; }
+
         public virtual List<Krog> Krogar { get; set; }
     }
 }

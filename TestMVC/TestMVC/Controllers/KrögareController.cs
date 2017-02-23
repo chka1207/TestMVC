@@ -14,6 +14,13 @@ namespace TestMVC.Controllers
     {
         private DatabasContext db = new DatabasContext();
 
+
+        //public ActionResult DisplayByKrögare(int krögareID)  //Egen metod
+        //{
+        //    //Här ska kod in
+        //    return View();
+        //}
+
         // GET: Krögare
         public ActionResult Index()
         {
