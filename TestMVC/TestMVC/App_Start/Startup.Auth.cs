@@ -54,9 +54,9 @@ namespace TestMVC
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "421307364874006",
+               appSecret: "b18fa60a3fa28ba0d56c4bccc2bb346d");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
